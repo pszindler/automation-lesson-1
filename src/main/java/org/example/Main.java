@@ -8,7 +8,7 @@ public class Main {
         startTheGame();
     }
 
-    public static int subtractThePointsAndWriteOutTheMessage(String message1, int tries) {
+    public static int subtractThePointsAndWriteOutTheMessage(Enum message1, int tries) {
         tries--;
         System.out.println(message1);
         System.out.println("You have " + tries + " more tries.");
@@ -28,9 +28,9 @@ public class Main {
         while (trialGuessing != 0) {
             userNumber = scanner.nextInt();
             if (userNumber > numberToGuess) {
-                trialGuessing = subtractThePointsAndWriteOutTheMessage(String.valueOf(Communicate.NUMBER_LOW), trialGuessing);
+                trialGuessing = subtractThePointsAndWriteOutTheMessage(Communicate.NUMBER_LOW, trialGuessing);
             } else if (userNumber < numberToGuess) {
-                trialGuessing = subtractThePointsAndWriteOutTheMessage(String.valueOf(Communicate.NUMBER_HIGH), trialGuessing);
+                trialGuessing = subtractThePointsAndWriteOutTheMessage(Communicate.NUMBER_HIGH, trialGuessing);
             } else {
                 System.out.println(Communicate.WINNER);
             }
