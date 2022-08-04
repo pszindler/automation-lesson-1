@@ -63,6 +63,6 @@ public class Main {
             public String toString() {
                 return "Sorry you didn't guess the number, the answer was: ";
             }
-        },
+        }
     }
 }
