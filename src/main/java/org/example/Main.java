@@ -19,27 +19,50 @@ public class Main {
     }
 
     public static void startTheGame() {
-        String startGameCommunicate = "Please guess the number from 0 to 99.";
-        String numberToHighCommunicate = "Your number is GREATER than the one you are trying to guess";
-        String numberToLowCommunicate = "Your number is LOWER than the one you are trying to guess";
-        String winnerCommunicate = "You guessed it!";
-        String loserCommunicate = "Sorry you didn't guess the number, the answer was: ";
-
-        int numberToGuess = new Random().nextInt(100);
-        Scanner scanner = new Scanner(System.in);
         int userNumber;
         int trialGuessing = 5;
-        System.out.println(startGameCommunicate);
+        int numberToGuess = new Random().nextInt(100);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println(Communicate.START);
         while (trialGuessing != 0) {
             userNumber = scanner.nextInt();
             if (userNumber > numberToGuess) {
-                trialGuessing = subtractThePointsAndWriteOutTheMessage(numberToLowCommunicate, trialGuessing);
+                trialGuessing = subtractThePointsAndWriteOutTheMessage(String.valueOf(Communicate.NUMBER_LOW), trialGuessing);
             } else if (userNumber < numberToGuess) {
-                trialGuessing = subtractThePointsAndWriteOutTheMessage(numberToHighCommunicate, trialGuessing);
+                trialGuessing = subtractThePointsAndWriteOutTheMessage(String.valueOf(Communicate.NUMBER_HIGH), trialGuessing);
             } else {
-                System.out.println(winnerCommunicate);
+                System.out.println(Communicate.WINNER);
             }
         }
-        System.out.println(loserCommunicate + numberToGuess);
+        System.out.println(Communicate.END.toString() + numberToGuess);
+    }
+
+    public enum Communicate {
+        START {
+            public String toString() {
+                return "Please guess the number from 0 to 99";
+            }
+        },
+        NUMBER_HIGH {
+            public String toString() {
+                return "Your number is GREATER than the one you are trying to guess";
+            }
+        },
+        NUMBER_LOW {
+            public String toString() {
+                return "Your number is LOWER than the one you are trying to guess";
+            }
+        },
+        WINNER {
+            public String toString() {
+                return "You guessed it!";
+            }
+        },
+        END {
+            public String toString() {
+                return "Sorry you didn't guess the number, the answer was: ";
+            }
+        },
     }
 }
