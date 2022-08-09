@@ -8,7 +8,7 @@ public class Main {
         startTheGame();
     }
 
-    public static int subtractThePointsAndWriteOutTheMessage(Enum message1, int tries) {
+    private static int subtractThePointsAndWriteOutTheMessage(Enum<Communicate> message1, int tries) {
         tries--;
         System.out.println(message1);
         System.out.println("You have " + tries + " more tries.");
@@ -38,7 +38,7 @@ public class Main {
         System.out.println(Communicate.END.toString() + numberToGuess);
     }
 
-    public enum Communicate {
+    private enum Communicate {
         START {
             public String toString() {
                 return "Please guess the number from 0 to 99";
