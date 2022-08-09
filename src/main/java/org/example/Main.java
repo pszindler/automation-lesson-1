@@ -45,26 +45,31 @@ public class Main {
 
     private enum Communicate {
         START {
+            @Override
             public String toString() {
                 return "Please guess the number from 0 to 99";
             }
         },
         NUMBER_HIGH {
+            @Override
             public String toString() {
                 return "Your number is GREATER than the one you are trying to guess";
             }
         },
         NUMBER_LOW {
+            @Override
             public String toString() {
                 return "Your number is LOWER than the one you are trying to guess";
             }
         },
         WINNER {
+            @Override
             public String toString() {
                 return "You guessed it!";
             }
         },
         END {
+            @Override
             public String toString() {
                 return "Sorry you didn't guess the number, the answer was: ";
             }
