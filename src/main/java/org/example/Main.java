@@ -37,8 +37,7 @@ public class Main {
                 winner = true;
                 break;
             }
-        }
-        if (!winner) {
+        } if (!winner) {
             System.out.println(Communicate.END.toString() + numberToGuess);
         }
 
