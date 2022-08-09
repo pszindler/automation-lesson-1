@@ -21,6 +21,7 @@ public class Main {
     public static void startTheGame() {
         int userNumber;
         int trialGuessing = 5;
+        boolean winner = false;
         int numberToGuess = new Random().nextInt(100);
         Scanner scanner = new Scanner(System.in);
 
@@ -33,10 +34,14 @@ public class Main {
                 trialGuessing = subtractThePointsAndWriteOutTheMessage(Communicate.NUMBER_HIGH, trialGuessing);
             } else {
                 System.out.println(Communicate.WINNER);
+                winner = true;
                 break;
             }
         }
-        System.out.println(Communicate.END.toString() + numberToGuess);
+        if (!winner) {
+            System.out.println(Communicate.END.toString() + numberToGuess);
+        }
+
     }
 
     private enum Communicate {
