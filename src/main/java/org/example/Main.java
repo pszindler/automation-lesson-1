@@ -33,6 +33,7 @@ public class Main {
                 trialGuessing = subtractThePointsAndWriteOutTheMessage(Communicate.NUMBER_HIGH, trialGuessing);
             } else {
                 System.out.println(Communicate.WINNER);
+                break;
             }
         }
         System.out.println(Communicate.END.toString() + numberToGuess);
